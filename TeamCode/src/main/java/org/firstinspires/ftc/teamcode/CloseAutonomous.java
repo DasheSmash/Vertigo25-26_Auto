@@ -32,6 +32,9 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
+//import com.acmerobotics
+
+import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
 
 @Autonomous(name="Close Autonomous", group="Robot")
 public class CloseAutonomous extends LinearOpMode {
@@ -39,15 +42,16 @@ public class CloseAutonomous extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        RobotMethods RMO = new RobotMethods(hardwareMap);
-        RMO.SetDirectionForward();
-        RMO.setZeroBehaviorAll();
+        //RobotMethods RMO = new RobotMethods(hardwareMap);
+        //RMO.SetDirectionForward();
+        //RMO.setZeroBehaviorAll();
         // Wait for the game to start (driver presses PLAY)
         telemetry.addData("Status", "Initialized");
         telemetry.update();
+        //Pose2D beginPose = new Pose2D(new Vector2D)
         waitForStart();
         runtime.reset();
-        RMO.timedMotorMove(800,1,0,0);
+
         //Outputs information until the end of the Autonomous Period:
         while (opModeIsActive()) {
             telemetry.update();

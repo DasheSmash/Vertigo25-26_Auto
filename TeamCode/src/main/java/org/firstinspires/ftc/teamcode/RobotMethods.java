@@ -30,10 +30,10 @@ public class RobotMethods extends LinearOpMode {
         // to the names assigned during the robot configuration step on the DS or RC devices.
         // NOTE: Not all of these pieces of hardware are technically needed, comment any of these
         // that aren't used (Keep in mind that other parts of the code may not work without these variables)
-        leftFrontDrive = hardwareMap.get(DcMotor.class, "FL");
-        leftBackDrive = hardwareMap.get(DcMotor.class, "BL");
-        rightFrontDrive = hardwareMap.get(DcMotor.class, "FR");
-        rightBackDrive = hardwareMap.get(DcMotor.class, "BR");
+        leftFrontDrive = hardwareMap.get(DcMotor.class, "leftFront");
+        leftBackDrive = hardwareMap.get(DcMotor.class, "leftBack");
+        rightFrontDrive = hardwareMap.get(DcMotor.class, "rightFront");
+        rightBackDrive = hardwareMap.get(DcMotor.class, "rightBack");
         launchMotor = hardwareMap.get(DcMotor.class, "intake");
         ballLoader = hardwareMap.get(Servo.class, "sev1");
         setupMotors(); //Method for all of the arm motor setup. Doesn't need to be in a method but it's more organized that way.

@@ -64,7 +64,7 @@ public class MainTeleOp extends LinearOpMode {
             }
             if(gamepad1.b){
                 //RMO.launchMotor.setPower(-armMultiplier);
-                launchPower = -1;
+                positionTo = 0.355;
             }
             if(gamepad1.x) {
                 launchPower = 0;
@@ -72,17 +72,29 @@ public class MainTeleOp extends LinearOpMode {
             if(gamepad1.y){
                 launchPower = 0.8;
             }
+            if(gamepad1.dpad_up){
+                launchPower = -0.5;
+            }
+            if(gamepad1.dpad_right){
+                launchPower = -0.75;
+            }
+            if(gamepad1.dpad_down){
+                launchPower = 0;
+            }
+            if(gamepad1.dpad_left){
+                launchPower = -0.25;
+            }
 
             //System to push balls into launcher:
             //if(gamepad2.left_bumper){RMO.loadBalls();}
             //if(gamepad2.right_bumper){RMO.resetLoader();}
             positionTo -= gamepad1.left_trigger/1000;
             positionTo += gamepad1.right_trigger/1000;
-            positionTo = Math.max(Math.min(positionTo, 0.90), 0.37);
+            positionTo = Math.max(Math.min(positionTo, 0.90), 0.355);
             RMO.ballLoader.setPosition(positionTo);
 
-            if(gamepad1.left_bumper){launchPower += 0.003;}
-            if(gamepad1.right_bumper){launchPower -= 0.003;}
+            if(gamepad1.left_bumper){launchPower -= 0.003;}
+            if(gamepad1.right_bumper){launchPower += 0.003;}
             launchPower = Math.min(Math.max(launchPower, -1), 1);
             RMO.launchMotor.setPower(launchPower);
             //Toggle system that is currently unused:
